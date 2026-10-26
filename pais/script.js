@@ -21,7 +21,7 @@ const h=(s,back)=>{app.innerHTML=s;if(back){const c=app.querySelector(".card");i
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");
 function beep(f,d){try{const c=beep.c||(beep.c=new (window.AudioContext||window.webkitAudioContext)()),o=c.createOscillator(),g=c.createGain();o.type="square";o.frequency.value=f;g.gain.value=.04;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+d)}catch(e){}}
 function type(el,t){let i=0;el.textContent="";const iv=setInterval(()=>{el.textContent=t.slice(0,++i);if(i>=t.length)clearInterval(iv)},55)}
-function menu(){last=0;document.body.classList.add("menu");startTetris();h(`<img class="logo" src="${LOGO}" alt="Logo Vieira Games" draggable="false"><h1 id="tt"></h1><p class="sub">Jogos criados na robótica e no maker, tecnologia, feira de brindes e muito mais.</p><div class="menu"><button class="btn start" id="go">Iniciar pesquisa</button></div>`);
+function menu(){last=0;document.body.classList.add("menu");startTetris();h(`<img class="logo" src="${LOGO}" alt="Logo Vieira Games" draggable="false"><h1 id="tt"></h1><p class="sub">Data 07/11</p><div class="menu"><button class="btn start" id="go">Iniciar pesquisa</button></div>`);
 type(document.getElementById("tt"),"PESQUISA PARA OS PAIS");
 document.getElementById("go").onclick=()=>{beep(880,.12);transition()}}
 const valid=k=>{const d=S[k];if(d.type==="multi")return A[k].length>0||A[d.txt].trim()!=="";if(!A[k])return false;if(d.fw&&A[k]===d.fw)return d.ff.every(x=>A[x[0]].trim()!=="");return true};
